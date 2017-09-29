@@ -1,0 +1,48 @@
+{#
+Possible values that can be accessed by Twig variables:
+
+sectiontitle: text / opt. title for a heading / usage: {{sectiontitle}}
+postcount: int / number of posts possible to render
+altimage: url / alternative image / usage: {{altimg|first.path}}
+feed: array / holds all fetched posts / usage: {% for post in feed|slice(0, postcount) %}
+-- post.hasimg: boolean / if post has a featured image
+-- post.imgsrc: url / source of the post image
+-- post.authorname: text
+-- post.authorlink: url
+-- post.authordescription: text
+-- post.blogtitle: text
+-- post.bloglink: url
+-- post.blogdate: text
+-- post.blogmodified: text
+-- post.blogexcerpt: text, limited, with HTML markup + "read more" link
+-- post.blogcontent: text with HTML markup
+#}
+
+<div class="container" style="width: 100%; padding: 3rem; display: flex; justify-content: space-around; flex-wrap: wrap;">
+  <h4 class="title">
+    {{sectiontitle}}
+  </h4>
+  {% for post in feed|slice(0, postcount) %}
+    <div class="card" style="flex: 0 1 20rem; display: flex; flex-direction: column; border-radius: 5px; margin: 0.3rem;">
+      {% if post.hasimg != 0 %}
+        <div class="cardimg">
+          <figure class="image">
+            <img src={{ post.imgsrc }} alt={{post.imgsrc| replace({('.' ~ post.imgsrc | split('.')[post.imgsrc | split('.')|length - 1]): ""})}}>
+      {% else %}
+        <div class="cardimg alternative">
+          <figure class="image">
+            <img src="{{ altimage|first.path }}" />
+      {% endif %}
+          </figure>
+        </div>
+      <div class="cardcontent" style="padding: 1rem;">
+        <div class="title" style="margin-bottom: 1rem;">
+          {{ post.blogtitle }}
+        </div>
+        <div class="excerpt">
+          {{ post.blogexcerpt }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

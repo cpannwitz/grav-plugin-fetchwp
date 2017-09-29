@@ -1,0 +1,111 @@
+name: FetchWP
+version: 0.5.0
+description: "This plugin fetches posts from the Wordpress REST Api."
+icon: wordpress
+author:
+  name: Christian Pannwitz
+  email: ch.von.pa@googlemail.com
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    Basics:
+      type: section
+      title: 'Status'
+
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    postSettings:
+      type: section
+      title: PLUGIN_FETCHWP.SETTINGS_TITLE
+      underline: true
+
+    disclaimer:
+      type: display
+      size: large
+      label: PLUGIN_FETCHWP.INSTRUCTIONS_P
+      content: PLUGIN_FETCHWP.INSTRUCTIONS
+
+    wordpress_fetch_settings.blogurl:
+      type: text
+      size: large
+      label: Blog-URL
+      placeholder: 'https//subdomain.blog.com'
+      validate:
+        type: slug
+
+    wordpress_fetch_settings.count:
+      type: text
+      size: small
+      label: PLUGIN_FETCHWP.SHOW_POSTS_COUNT
+      placeholder: '3'
+      default: 3
+      validate:
+        type: number
+
+    wordpress_fetch_settings.enableTranslation:
+      type: toggle
+      label: PLUGIN_FETCHWP.ENABLE_TRANSLATION_P
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    wordpress_fetch_settings.enableFMedia:
+      type: toggle
+      label: PLUGIN_FETCHWP.ENABLE_FMEDIA_P
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    ifFMediaEnabled:
+      type: conditional
+      condition: config.plugins.fetchwp.wordpress_fetch_settings.enableFMedia
+      fields:
+        wordpress_fetch_settings.qualityFMedia:
+          type: select
+          label: PLUGIN_FETCHWP.QUALFMEDIA_P
+          options:
+              full: Fullsize
+              thumbnail: Thumbnail
+              medium: Medium
+              medium-large: Medium-Large
+              post: Post
+              post-thumbnail: Post-Thumbnail
+
+    wordpress_fetch_settings.altImage:
+      label: PLUGIN_FETCHWP.ALT_IMAGE_P
+      type: file
+      random_name: true
+      avoid_overwriting: true
+      multiple: false
+      destination: 'user/plugins/fetchwp/assets'
+      filesize: 5
+      accept:
+        - image/*
+
+    wordpress_fetch_settings.sectiontitle:
+      type: text
+      size: large
+      label: PLUGIN_FETCHWP.SECTION_TITLE_P
+      placeholder: PLUGIN_FETCHWP.SECTION_TITLE
+      default: PLUGIN_FETCHWP.SECTION_TITLE
+      validate:
+        type: slug
