@@ -1,10 +1,14 @@
 name: FetchWP
-version: 0.5.0
-description: "This plugin fetches posts from the Wordpress REST Api."
+version: 0.6.0
+description: "This plugin fetches and displays posts from the Wordpress REST Api."
 icon: wordpress
 author:
   name: Christian Pannwitz
   email: ch.von.pa@googlemail.com
+  url: https://github.com/cpannwitz
+keywords: plugin, grav, wordpress
+homepage: https://github.com/cpannwitz/grav-plugin-fetchwp
+bugs: https://github.com/cpannwitz/grav-plugin-fetchwp/issues
 license: MIT
 
 form:
