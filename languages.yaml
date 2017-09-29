@@ -2,8 +2,8 @@ en:
     PLUGIN_FETCHWP:
         SETTINGS_TITLE: "Settings"
         INSTRUCTIONS_P: "Attention!"
-        INSTRUCTIONS: "Be sure to take a valid Blog-URL! (sometimes /index.php is required in ht URL)"
-        SECTION_TITLE_P: "Section title (opt.)"
+        INSTRUCTIONS: "Be sure to take a valid Blog-URL!"
+        SECTION_TITLE_P: "Section title (optional)"
         SECTION_TITLE: "Last blog entries"
         SHOW_POSTS_COUNT: "Number of posts to display"
         ENABLE_FMEDIA_P: "Enable fetching of featured media for posts"
@@ -15,7 +15,7 @@ de:
     PLUGIN_FETCHWP:
         SETTINGS_TITLE: "Einstellungen"
         INSTRUCTIONS_P: "Achtung!"
-        INSTRUCTIONS: "Bitte korrekte Blog-URL angeben! (manchmal ist es notwendig /index.php anzufügen)"
+        INSTRUCTIONS: "Bitte korrekte Blog-URL angeben!"
         SECTION_TITLE_P: "Überschrift (optional)"
         SECTION_TITLE: "Die letzten Blogbeiträge"
         SHOW_POSTS_COUNT: "Anzahl anzuzeigender Posts"
