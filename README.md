@@ -8,6 +8,15 @@ Data from the Wordpress REST Api is fetched, processed through different setting
 
 # Features
 
+![screenshot settings FetchWP](assets/screenshot.JPG)
+
+- Number of blog posts to display
+- Language support
+- Featured Media embed option
+- Featured Media quality/size selection
+- Alternative image placeholder
+- Section title
+
 # Installation
 
 Installing the Error plugin can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the plugin with a simple terminal command, while the manual method enables you to do so via a zip file.
@@ -42,13 +51,6 @@ After installing the FetchWP-Plugin, you are required to visit the page of the p
 ```
 
 3) Adjust settings on the plugin page to your needs.
-
-    - Number of blog posts to display
-    - language support on/off
-    - Featured Media embed on/off (also affects author)
-    - Featured Media quality/size
-    - Alternative image placeholder
-    - Section title
 
 ## Template
 
