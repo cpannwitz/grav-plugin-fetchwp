@@ -8,7 +8,7 @@ Data from the Wordpress REST Api is fetched, processed through different setting
 
 # Features
 
-![screenshot settings FetchWP](assets/screenshot.JPG)
+![screenshot settings FetchWP](assets/screenshot.jpg)
 
 - Number of blog posts to display
 - Language support
